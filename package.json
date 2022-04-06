@@ -1,0 +1,25 @@
+{
+  "name": "jquery_breakoutlecture",
+  "version": "1.0.0",
+  "description": "app for lecture",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ermurray/JQuery_BreakoutLecture.git"
+  },
+  "author": "Eric Murray",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ermurray/JQuery_BreakoutLecture/issues"
+  },
+  "homepage": "https://github.com/ermurray/JQuery_BreakoutLecture#readme",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.3"
+  }
+}
