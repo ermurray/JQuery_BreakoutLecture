@@ -20,7 +20,7 @@ const createActvity = function(data) {
 $(document).ready(function(){
 
 
-  $('.examplebubble').submit(function(event){
+  $('.examplebubble').submit( event => {
     event.preventDefault();
     const data = $("#myInput").val()
     console.log('this', this);
@@ -29,7 +29,7 @@ $(document).ready(function(){
     $.ajax({
       url: '/postStuff',
       method: 'POST',
-      data: {data}
+      data: {data},
     })
 
     $.ajax({
@@ -40,7 +40,7 @@ $(document).ready(function(){
       const $activity =  createActvity(res)
       console.log('this is an activity', res)
       $(".myTarget")
-      // .empty()
+      .empty()
       .append($activity)
     })
   })
