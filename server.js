@@ -10,12 +10,12 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('Public'));
 
 const myfunc = function(data) {
-  console.log('Posted Data',data)
+  console.log('Posted Data', data)
 }
 
 app.post('/postStuff', (req,res)=>{
-  const myStuff = req.body.data
-  console.log( 'data',myStuff)
+  const myStuff = req
+  //console.log( 'data', myStuff)
   // function to insert to db myfunc(mystuff)
   myfunc(myStuff)
   res.status(200).send('ok')

@@ -1,6 +1,6 @@
 
-
-const createActvity = function(data) {
+// 
+const createActivity = function(data) {
   // const activityTitle = data.activity
   return (
     $(
@@ -12,41 +12,30 @@ const createActvity = function(data) {
       </article>`
     )
   );
-
-
 }
 
+// `http://www.boredapi.com/api/activity?type=${data}`
 
 $(document).ready(function(){
-
-
-  $('.examplebubble').submit( event => {
+  $('.exampleBubble').submit( event => {
     event.preventDefault();
-    const data = $("#myInput").val()
-    console.log('this', this);
-    console.log('going to get activity');
-    console.log('value', data);
+    const data = $('#myInput').val()
+
     $.ajax({
       url: '/postStuff',
       method: 'POST',
-      data: {data},
-    })
+      data: {data}
+    }).then((res) => console.log(res));
 
     $.ajax({
       url: `http://www.boredapi.com/api/activity?type=${data}`,
-
-      
-    }).then((res)=>{
-      const $activity =  createActvity(res)
-      console.log('this is an activity', res)
-      $(".myTarget")
-      .empty()
-      .append($activity)
+      method: 'GET',
+    }).then((res) => {
+      const $activity = createActivity(res)
+      $('.myTarget').empty().append($activity)
     })
+    $('.myTarget').on('click', '.newActivity', function(){
+      $(this).toggleClass('changeRed')
+    } )
   })
-  $('.myTarget').on('click','.newActivity', function(){
-    $(this).toggleClass('changeRed')
-  })
-
-
-})
+});
